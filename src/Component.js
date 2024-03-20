@@ -2,16 +2,15 @@ import React from 'react';
 
 // Header Component
 const Header = () => (
-<div >
-  <div className="header">
-    <h1>BENUS DARJEELING HOME</h1>
-    <p className='byline'>A Backpackers Hub</p>
-  </div>
-  <hr /> {/* This line is added right after the header */}
-  {/* Other content follows */}
-</div>
-
+  <header>
+    <div className="header">
+      <h1>BENUS DARJEELING HOME</h1>
+      <p className='byline'>A Backpackers Hub</p>
+    </div>
+    <hr /> {/* This line is added right after the header */}
+  </header>
 );
+
 
 // Body Component, updated with clickable phone numbers
 const Body = () => (
