@@ -1,38 +1,183 @@
+/* Global styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik', sans-serif;
+  background-color: #FFF9C4; /* Lighter shade of yellow for webpage background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+.body, .info, .footer {
+  width: 100%;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
 .App {
+  width: 100%;
+  max-width: 1200px;
+  background-color: #FFFDE7; /* Soft yellow for the page, complementing the header */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  margin: 0 auto; /* Center the app */
+  padding: 20px; /* Adjust as needed */
+}
+
+.byline {
+  color: #795548; /* White text */
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5); /* Black shadow for contrast */
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+.header h1 {
+  font-family: 'Bangers', cursive; /* Continue using the comic-style font */
+  color: #FF0000; /* Bright red color for the text */
+  text-shadow:
+    1px 1px 0px #000, /* Black shadow for contrast */
+    0 0 8px #FF4747, /* Light and soft red glow */
+    0 0 10px #FF6969; /* Slightly larger and softer red glow */
+  font-size: 2.5em; /* Adjust size as needed */
+  margin: 10px 0;
+}
+
+.header {
+  background-color: #FFD700; /* Dark bright yellow background */
+  padding: 20px; /* Adds some padding around the text for better spacing */
+  margin: -20px; /* Adjust if necessary to align with your layout */
+  text-align: center; /* Keeps the text aligned centrally */
+}
+
+/* Header styles */
+.header p {
+  font-size: 1.25em; /* Keeps the font size ratio intact; adjust as needed */
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background-color: #ccc;
+  margin: 20px 0;
+}
+
+.availability, .footer {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.footer a {
+  color: inherit; /* This makes the link use the text color of the footer */
+  text-decoration: none; /* Optionally removes the underline from the link */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.footer a:hover, .footer a:focus {
+  text-decoration: underline; /* Adds an underline on hover/focus for better accessibility */
+}
+
+.footerText {
+  font-size: 12px;
+}
+
+
+.book-now {
+  display: flex; /* Establish flex container */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  text-align: center; /* Ensure text alignment is centered */
+  width: 100%; /* Use full width of its parent to avoid unintended offsets */
+  padding: 20px; /* Adjust padding as needed */
+  margin: 0 auto; /* Remove any default margin and ensure it's centered */
+  background-color: #ffb59f; /* Your existing background color */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.book-now > p {
+  margin: 0; /* Reset any default margins on paragraph */
+  width: 100%; /* Ensure it spans the full width of its parent */
+}
+
+
+/* Ensure content is centered vertically in all cases */
+@media (min-height: 500px) {
+  body {
+    justify-content: center;
+  }
+
+  .header h1 {
+    font-size: 2em; /* Maintain or slightly adjust the size for smaller screens */
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.contact a {
+  color: #5D4037; /* Warm, dark brown for text */
+  text-decoration: none; /* Optional: removes underline */
+  margin: 0 5px;
+  font-weight: bolder;
+}
+
+.contact a:hover, .contact a:focus {
+  text-decoration: underline; /* Adds underline on hover/focus for better accessibility */
+}
+
+.book-now {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center; /* Centers the content horizontally */
+  justify-content: center; /* Adjusts spacing evenly, if needed */
+  text-align: center; /* Ensures text alignment is centered within the div */
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+.blinking {
+  font-size: 1.9em; /* Example size, adjust as needed */
+  font-weight: bold;
+  color: red;
+  animation: blink-animation 1s infinite;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes blink-animation {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.availability {
+  margin-bottom: 10px; /* Adds space below the availability message */
+}
+
+p span {
+  display: block; /* Makes each span element occupy its own line */
+}
+
+.address p {
+  line-height: 1.2; /* Adjusts the height of lines within the paragraph */
+  margin-top: 0; /* Removes the top margin for a tighter fit */
+  margin-bottom: 5px; /* Reduces the bottom margin to bring paragraphs closer together */
+  font-weight: bolder;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  body {
+    align-items: flex-start; /* Aligns content to start from the very top */
   }
-  to {
-    transform: rotate(360deg);
+
+  .info {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .App {
+    margin-top: 0; /* Removes any top margin on the main container */
+    padding-top: 0; /* Removes any top padding on the main container */
   }
 }
